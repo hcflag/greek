@@ -21,3 +21,12 @@ val goodlines = asciiCorpus.filterNot(_.text.contains("#"))
 val goodlinesTwoColumns = goodlines.map(cn => cn.urn.toString + "\t" + cn.text).mkString("\n")
 
 new PrintWriter("iliad-goodlines.tsv") { write(goodlinesTwoColumns); close }
+
+/*
+val goodIl = CorpusSource.fromFile("iliad-goodlines.tsv")
+val goodWordVects = goodIl.nodes.map(cn => cn.text.split(" ").toVector)
+val gkWordVects = goodWordVects.map{ v => v.map (LiteraryGreekString(_)) }
+val sylls = gkWordVects.map { v => LGSyllable.syllabify(v) }
+val syllsDisplay = sylls.map{v => (v.map(_.ucode)).mkString("-") }
+val pitchLines = sylls.map{v => (v.map(_.accent.getOrElse("-")).mkString) }
+*/
