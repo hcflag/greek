@@ -3,9 +3,9 @@ import  edu.holycross.shot.ohco2._
 import  edu.holycross.shot.greek._
 import  edu.holycross.shot.gsphone._
 
-val corpus = CorpusSource.fromFile("texts/iliad-oct.tsv")
+val corpus = CorpusSource.fromFile("in-progress/iliad-oct.tsv")
 val urnList = corpus.nodes.map(_.urn)
-// val wordVectors = corpus.nodes.map(cn => cn.text.split(" ").toVector)
+
 
 val asciiStrings = corpus.nodes.map( cn =>  LiteraryGreekString(cn.text).ascii )
 val asciiZipped = urnList.zip(asciiStrings)
