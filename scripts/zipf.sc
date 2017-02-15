@@ -12,7 +12,7 @@ val asciiChars = asciiStrings.mkString.toList
 val charmaps = asciiChars.groupBy(c => c)
 val histo = charmaps.map { m => (m._1,m._2.size)}.toSeq.sortBy(_._2).reverse
 
-println("\n\nSet of " histo.size + " characters is distributed as follows:")
+println("\n\nSet of " + histo.size + " characters is distributed as follows:")
 for ((k,v) <- histo) {
   println(k + " " + v)
 }
